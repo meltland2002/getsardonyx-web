@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- background-color: #2b2b2b; border-radius: 15px; color: #b5b5b5; padding: 10px 10px -->
 <head>
   <title>getSardonyx demo</title>
   <style>
@@ -9,12 +10,45 @@ body {
   background-color: #0d0d0d;
   color: white;
   padding: 10px 10px;
-  margin: 10px 25vw;
+  margin: 10px 20vw;
+}
+
+button {
+  background-color: #363636;
+  border: none;
+  color: #b5b5b5;
+  padding: 15px 20px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  background-color: #454545;
+}
+
+div {
+  width: 70%;
+  margin: auto;
 }
   </style>
 </head>
 <body><center>
 <h1>getSardonyx demo</h1>
-<p>Thanks for wanting to help test the getSardonyx demo project! Click the button below to download the client. Follow the instructions in the Discord server to run the client.</p>
-<button onclick='window.open("https://cdn.getsardonyx.cc/dl/client.py")'>Download</button>
-</center></body>
+<p>Thanks for wanting to help test the getSardonyx demo project!<br>Please select your platform using the buttons below.</p>
+<button id="win" style="border-radius: 15px 3px 3px 15px;" onclick="selWin();">Windows</button> <button id="lin" style="border-radius: 3px 15px 15px 3px;" onclick="selLin();">Linux</button><br><br></center>
+<div id="ins" style="display: none;"></div>
+<script>
+function selWin() {
+  document.getElementById("ins").style = "background-color: #2b2b2b; border-radius: 15px; color: #b5b5b5; padding: 10px 10px"
+  document.getElementById("ins").innerHTML = "<h3 style='color: #dedede;'>Instructions for Windows</h3><p><a href='https://python.org/' style='color: white;'>Download Python</a> if you don't already have it.<br>Once Python has installed, run <b style='color: #dbdbdb;'>\"py -m pip install tkinter\"</b> in command prompt.<br>After that, <a style='color: white;' href='https://cdn.getsardonyx.cc/dl/client.py' download>Download the client</a>.<br>Once that finishes, simply navigate to your Downloads folder (you should just be able to do <b style='color: #dbdbdb;'>\"cd Downloads\"</b>), and run <b style='color: #dbdbdb;'>\"py client.py\"</b>.</p>"
+};
+
+function selLin() {
+  document.getElementById("ins").style = "background-color: #2b2b2b; border-radius: 15px; color: #b5b5b5; padding: 10px 10px"
+  document.getElementById("ins").innerHTML = "<h3 style='color: #dedede;'>Instructions for Linux</h3><p>You most likely have Python installed, but if you don't, <a href='https://python.org/' style='color: white;'>Download Python</a>.<br>Once Python has installed, run <b style='color: #dbdbdb;'>\"python3 -m pip install tkinter\"</b> in a terminal.<br>After that, <a style='color: white;' href='https://cdn.getsardonyx.cc/dl/client.py' download>Download the client</a>.<br>Once that finishes, simply navigate to your Downloads folder (you should just be able to do <b style='color: #dbdbdb;'>\"cd Downloads\"</b>), and run <b style='color: #dbdbdb;'>\"python3 client.py\"</b>.</p>"
+};
+</script></body>
